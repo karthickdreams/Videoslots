@@ -1,6 +1,7 @@
 package Demo;
 
-public class NumericalOperations {
+public class NumericalOperations 
+{
 	
 	// Description: Function to read the array and count the number of elements (integers) divisible by any given number
 	// Parameters:
@@ -8,7 +9,8 @@ public class NumericalOperations {
 	// Input : intDivideByNumber - [Integer] - Number to be used for divide by
 	// Output : intDivisibleCount - [Integer] - returns the number of elements divisible by intDivideByNumber
 	
-	public static int countOfDivisible(int[] arrInputNumbers ,int intDivideByNumber) {
+	public static int countOfDivisible(int[] arrInputNumbers ,int intDivideByNumber) 
+	{
 		
 		int intDivisibleCount = 0;
 
@@ -17,12 +19,10 @@ public class NumericalOperations {
 				intDivisibleCount++;
 			}
 		}
+		
 		return intDivisibleCount;
-
 	}
 	
-
-
 	// Description: Function to read the array and count the number of elements (integers) divisible by any given two numbers
 	// Parameters:
 	// Input: arrInputNumbers - [Array] - List of numbers
@@ -42,8 +42,8 @@ public class NumericalOperations {
 			}
 			
 		}
-		return intDivisibleCount;
-			
-}
+		
+		return intDivisibleCount;		
+	}
 }
 
