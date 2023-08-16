@@ -46,56 +46,54 @@ public class StepDefintion extends BaseClass
 	public void user_can_enter_the_username_as(String strUsernameValue) throws InterruptedException 
 	{
 		WebElement objUsernameField = FindWebElement("//input[@id=\"username\"]");
-		sendingTheInputValue(objUsernameField, strUsernameValue);
+		setInputText(objUsernameField, strUsernameValue);
+		// Due to Internet connection at my home and also the Captcha page popping up randomly ion Evernote, couldn't avoid using sleep. Otherwise the implicit wait is the operation intended here
 		Thread.sleep(5000);
 		WebElement objContinueButton = FindWebElement("//input[@id=\"loginButton\"]");
 		clickWebElement(objContinueButton);
+		// Due to Internet connection at my home and also the Captcha page popping up randomly ion Evernote, couldn't avoid using sleep. Otherwise the implicit wait is the operation intended here
 		Thread.sleep(5000);
-
 	}
 
 	@When("user can enter the password as {string}")
-	public void user_can_enter_the_password_as(String strPasswordValue) throws Exception {
-
-		//WebElement passwordEvernote = driver.findElement(By.xpath("//input[@id=\"password\"]"));
+	public void user_can_enter_the_password_as(String strPasswordValue) throws Exception 
+	{
 		WebElement objPasswordField = FindWebElement("//input[@id=\"password\"]");
-		sendingTheInputValue(objPasswordField, strPasswordValue);
+		setInputText(objPasswordField, strPasswordValue);
 		Thread.sleep(5000);
-
 	}
 
 	@When("user can click the login button")
-	public void user_can_click_the_login_button() {
-		//WebElement loginButtonToNextPage = driver.findElement(By.xpath("//input[@id=\"loginButton\"]"));
+	public void user_can_click_the_login_button() 
+	{
 		WebElement objLoginButtonAfterPassword = FindWebElement("//input[@id=\"loginButton\"]");
 		clickWebElement(objLoginButtonAfterPassword);
 	}
 
 	@Then("The home page will be displayed")
-	public void the_home_page_will_be_displayed() {
-		
-	//	String actionMenuAttibute = driver.findElement(By.xpath("//button[@id=\"qa-CREATE_NOTE\"]"))
-			//	.getAttribute("aria-controls");
+	public void the_home_page_will_be_displayed() 
+	{	
 		WebElement objActionMenuAttribute = FindWebElement("//button[@id=\"qa-CREATE_NOTE\"]");
 		String strHomepageActionMenuText= objActionMenuAttribute.getText();
+		
+		// assert if the home page is displayed properly
 		assertEquals(strHomepageActionMenuText, "ActionMenu");
-
 	}
 
 	@Then("The forgot password will be displayed")
-	public void the_forgot_password_will_be_displayed() {
-		//WebElement passwordRest = driver.findElement(By.xpath("//div[@class='page-header']"));
-		WebElement objPasswordRest = FindWebElement("//div[@class='page-header']");
-
-		String textfromWebPage = getFromWebPage(objPasswordRest);
+	public void the_forgot_password_will_be_displayed()
+	{
+		WebElement objPasswordReset = FindWebElement("//div[@class='page-header']");
+		String textfromWebPage = getFromWebPage(objPasswordReset);
+		
+		//assert if the forgot password appears on webpage
 		assertEquals(textfromWebPage, "Password Reset Required");
-
 	}
 
+	// Reusable method to find the webelement using given locator
 	public WebElement FindWebElement(String strxPathIdentifier)
 	{
-				WebElement returnWebElement = driver.findElement(By.xpath(strxPathIdentifier));
-				return returnWebElement;
-
+		WebElement returnWebElement = driver.findElement(By.xpath(strxPathIdentifier));
+		return returnWebElement;
 	}
 }
