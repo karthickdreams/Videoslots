@@ -5,9 +5,10 @@ import java.util.List;
 import Demo.InputDataHandlingUtilities;
 import Demo.NumericalOperations;
 
-public class DivisibleCheckProgram {
-
-	public static void main(String[] args) throws IOException {
+public class DivisibleCheckProgram 
+{
+	public static void main(String[] args) throws IOException 
+	{
 		// variables declaration
 		String strInputExcelPath = "C:\\Users\\karth\\eclipse-workspace\\neweclipse\\two\\DataFromExcel\\InputOutput.xlsx";
 		String strDivisbleCheckSheetName = "DivisibleCheck";
