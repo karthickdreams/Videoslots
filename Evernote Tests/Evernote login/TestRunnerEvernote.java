@@ -10,12 +10,9 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "C:\\Users\\karth\\eclipse-workspace\\neweclipse\\R\\src\\test\\java\\EvernoteFeature.feature", glue = "StepDef",
+@CucumberOptions(features = "C:\\Users\\karth\\eclipse-workspace\\neweclipse\\R\\src\\test\\java\\EvernoteFeature.feature", glue = "StepDef", monochrome = true, plugin = "pretty")
 
-		monochrome = true, plugin = "pretty")
-
-public class TestRunnerEvernote {
-
-	
+public class TestRunnerEvernote 
+{
 
 }
