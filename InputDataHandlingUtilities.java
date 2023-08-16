@@ -13,7 +13,8 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 
-public class InputDataHandlingUtilities {
+public class InputDataHandlingUtilities 
+{
 
 	List<Object> listOfInput = new ArrayList<Object>();
 
@@ -23,8 +24,8 @@ public class InputDataHandlingUtilities {
 	// Input : strSheetName - [String] - Specify the sheet name from where the data must be read
 	// Output : List - [List] - returns the list of values from the column "A"
 
-	public List inputFromExcel(String strInputExcelPath, String strSheetName) throws IOException {
-
+	public List inputFromExcel(String strInputExcelPath, String strSheetName) throws IOException 
+	{
 		//Initiate excel object and sheet object
 		File inputExcelFileObject = new File(strInputExcelPath);
 		FileInputStream ExcelInputStreamObject = new FileInputStream(inputExcelFileObject);
@@ -34,15 +35,14 @@ public class InputDataHandlingUtilities {
 		int intRowCount = strSheetObject.getPhysicalNumberOfRows();
 
 		// Traverse row by row and add the values present in the excel into the list
-		for (int inputRowNumber = 1; inputRowNumber < intRowCount; inputRowNumber++) {
-
+		for (int inputRowNumber = 1; inputRowNumber < intRowCount; inputRowNumber++) 
+		{
 			Row currentIterationRowInputString = strSheetObject.getRow(inputRowNumber);
 			Cell firstCellString = currentIterationRowInputString.getCell(0);
 			listOfInput.add(firstCellString);
 		}
 
 		return listOfInput;
-
 	}
 
 	// Description: Function to write boolean data into an excel file in a given "sheet"
@@ -52,8 +52,8 @@ public class InputDataHandlingUtilities {
 	// Input : boolOutputValue - [boolean] - Either True or false from the place of calling
 	// Input : intOutputRownumber - [Integer] - Row number where the output to be written
 
-	public void exportToExcel(String strInputExcelPath, String strSheetName, boolean boolOutputValue, int intOutputRownumber) throws IOException {
-
+	public void exportToExcel(String strInputExcelPath, String strSheetName, boolean boolOutputValue, int intOutputRownumber) throws IOException 
+	{
 		File outputExcelFileObject = new File(strInputExcelPath);
 		FileInputStream excelInputStreamObject = new FileInputStream(outputExcelFileObject);
 		Workbook workbookObject = new XSSFWorkbook(excelInputStreamObject);
@@ -64,7 +64,6 @@ public class InputDataHandlingUtilities {
 		OutputResult.createCell(1).setCellValue(boolOutputValue);
 		FileOutputStream excelOutputStreamObject = new FileOutputStream(outputExcelFileObject);
 		workbookObject.write(excelOutputStreamObject);
-
 	}
 
 	// Description: Function to write Integer data into an excel file in a given "sheet"
@@ -74,8 +73,8 @@ public class InputDataHandlingUtilities {
 	// Input : intResult - [Integer] - Result of the opertion to be written on the excel
 	// Input : intOutputRownumber - [Integer] - Row number where the output to be written
 
-	public void resultToExcel(String strInputExcelPath, String strSheetName, int intResult, int intOutputRownumber) throws IOException {
-
+	public void resultToExcel(String strInputExcelPath, String strSheetName, int intResult, int intOutputRownumber) throws IOException 
+	{
 		File outputExcelFileObject = new File(strInputExcelPath);
 		FileInputStream excelInputStreamObject = new FileInputStream(outputExcelFileObject);
 		Workbook workbookObject = new XSSFWorkbook(excelInputStreamObject);
@@ -86,7 +85,5 @@ public class InputDataHandlingUtilities {
 
 		FileOutputStream excelOutputStreamObject = new FileOutputStream(outputExcelFileObject);
 		workbookObject.write(excelOutputStreamObject);
-
 	}
-
 }
