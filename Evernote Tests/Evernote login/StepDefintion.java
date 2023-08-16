@@ -1,30 +1,27 @@
-package StepDef;
-
+package StepDefinition;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.R.BaseClass;
-
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.messages.internal.com.google.protobuf.Duration;
 
-public class StepDefintion extends BaseClass {
+public class StepDefintion extends BaseClass 
+{
 	public WebDriver driver;
-
 	public WebDriverWait wait;
 
 	// Common hooks class to execute before the Scenario is initiated to execute
 	@Before
-	public void browserLaunch() {
+	public void browserLaunch() 
+	{
 		driver = new ChromeDriver();
 		driver.get("https://evernote.com");
 		driver.manage().window().maximize();
@@ -33,29 +30,24 @@ public class StepDefintion extends BaseClass {
 
 	// Common hooks class to execute after the Scenario execution is completed
 	@After
-	public void browserClose() {
+	public void browserClose() 
+	{
 		driver.close();
 	}
-
 
 	@When("user can click Login button")
 	public void user_can_click_Login_button()
 	{
-
-		//WebElement logInButton = driver.findElement(By.xpath("//a[text()=\"Log In\"]"));
 		WebElement objLoginButton = FindWebElement("//a[text()=\"Log In\"]");
 		clickWebElement(objLoginButton);
-
 	}
 
 	@When("user can enter the username as {string}")
-	public void user_can_enter_the_username_as(String strUsernameValue) throws InterruptedException {
-
-		//WebElement usernameEvernote = driver.findElement(By.xpath("//input[@id=\"username\"]"));
+	public void user_can_enter_the_username_as(String strUsernameValue) throws InterruptedException 
+	{
 		WebElement objUsernameField = FindWebElement("//input[@id=\"username\"]");
 		sendingTheInputValue(objUsernameField, strUsernameValue);
 		Thread.sleep(5000);
-		//WebElement contiune = driver.findElement(By.xpath("//input[@id=\"loginButton\"]"));
 		WebElement objContinueButton = FindWebElement("//input[@id=\"loginButton\"]");
 		clickWebElement(objContinueButton);
 		Thread.sleep(5000);
