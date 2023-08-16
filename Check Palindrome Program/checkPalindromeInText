@@ -15,6 +15,7 @@ public class checkPalindromeInText
 		String strSheetName = "PalindromeTest";
 		List inputFromExcelListObject = InputDataHandlingUtilityObject.inputFromExcel(strInputExcelPath, strSheetName);
 		
+		// Iterate based on the input data from excel sheet
 		for (int indexofOutputString = 1; indexofOutputString < inputFromExcelListObject.size(); indexofOutputString++) 
 		{	
 			Object inputTextObjectFromExcel = inputFromExcelListObject.get(indexofOutputString);
