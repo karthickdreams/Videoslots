@@ -8,7 +8,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "C:\\Users\\karth\\eclipse-workspace\\neweclipse\\R\\src\\test\\java\\com\\R\\checkData.feature",
+@CucumberOptions(features = "C:\\Users\\karth\\eclipse-workspace\\neweclipse\\R\\src\\test\\java\\com\\R\\createNote.feature",
 glue = "StepDef", 
 dryRun = !true,
 monochrome = true,
