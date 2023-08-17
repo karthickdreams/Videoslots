@@ -23,11 +23,11 @@ public class checkPalindromeInText
 			
 			if (checkPalindrome == true) 
 			{
-				InputDataHandlingUtilityObject.ExportToExcel(checkPalindrome, indexofOutputString);
+				InputDataHandlingUtilityObject.writeBooleanToExcel(checkPalindrome, indexofOutputString);
 			} 
 			else 
 			{
-				InputDataHandlingUtilityObject.ExportToExcel(checkPalindrome, indexofOutputString);
+				InputDataHandlingUtilityObject.writeBooleanToExcel(checkPalindrome, indexofOutputString);
 			}
 		}
 	}
