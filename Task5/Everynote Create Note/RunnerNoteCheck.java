@@ -16,5 +16,4 @@ plugin = "pretty"
 )
 
 public class Runner {
-
 }
