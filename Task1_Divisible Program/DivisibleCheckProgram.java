@@ -29,7 +29,7 @@ public class DivisibleCheckProgram
 
 			//Divisible check using a reusable function and write it back into the excel
 			int intCountOfDivisibleElementsInArray = numbericalOperationsObject.countOfDivisibleByTwoNumbers(arrInputString, 4, 6);
-			inputDataHandlingUtilities.resultToExcel(intCountOfDivisibleElementsInArray, intIterationCounter);
+			inputDataHandlingUtilities.writeIntegerToExcel(intCountOfDivisibleElementsInArray, intIterationCounter);
 		}
 	}
 }
