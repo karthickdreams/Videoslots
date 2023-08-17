@@ -50,7 +50,7 @@ public class InputDataHandlingUtilities
 	// Input : boolOutputValue - [boolean] - Either True or false from the place of calling
 	// Input : intOutputRownumber - [Integer] - Row number where the output to be written
 
-	public void exportToExcel(String strInputExcelPath, String strSheetName, boolean boolOutputValue, int intOutputRownumber) throws IOException 
+	public void writeBooleanToExcel(String strInputExcelPath, String strSheetName, boolean boolOutputValue, int intOutputRownumber) throws IOException 
 	{
 		File outputExcelFileObject = new File(strInputExcelPath);
 		FileInputStream excelInputStreamObject = new FileInputStream(outputExcelFileObject);
@@ -71,7 +71,7 @@ public class InputDataHandlingUtilities
 	// Input : intResult - [Integer] - Result of the opertion to be written on the excel
 	// Input : intOutputRownumber - [Integer] - Row number where the output to be written
 
-	public void resultToExcel(String strInputExcelPath, String strSheetName, int intResult, int intOutputRownumber) throws IOException 
+	public void writeIntegerToExcel(String strInputExcelPath, String strSheetName, int intResult, int intOutputRownumber) throws IOException 
 	{
 		File outputExcelFileObject = new File(strInputExcelPath);
 		FileInputStream excelInputStreamObject = new FileInputStream(outputExcelFileObject);
