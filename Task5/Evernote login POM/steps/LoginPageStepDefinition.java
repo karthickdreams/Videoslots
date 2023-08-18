@@ -27,11 +27,12 @@ public class LoginPageStepDefinition {
 
     @Given("Navigate to Login Page in Application")
     public void navigate_to_login_page_in_application() {
+        String strEvernoteURL = "https://www.evernote.com/Login.action";
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         System.setProperty("webdriver.chrome.driver", "/Users/Shared/Karthick Files/JARs and Drivers/chromedriver");
         driver = new ChromeDriver(options);
-        driver.get("https://www.evernote.com/Login.action");
+        driver.get(strEvernoteURL);
 
     }
 
